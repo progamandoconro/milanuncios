@@ -79,7 +79,7 @@ def login():
 def get_advertisements_id(cookie):
     response = requests.get(URL['advertisements_list'], cookies=cookie,
                             headers=HEADER)
-    return re.findall(r"(?<=\?idanuncio=)(\d{9})(?=&)",
+    return re.findall(r"(\d{9})",
                       response.text.encode('utf-8'))
 
 
